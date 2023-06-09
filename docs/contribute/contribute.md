@@ -52,3 +52,7 @@ Do you find Nixtla useful and want to share your story? Make a PR to this repo
 with your writing in a markdown file, or just post it on Medium, Dev or your own
 blog post. We would love to hear from you 💚
 
+<Note>
+ This document is based on the documentation from [MindsDB](https://github.com/mindsdb/mindsdb)
+</Note>
+
