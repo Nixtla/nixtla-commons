@@ -29,6 +29,8 @@ jobs:
           echo "[LOG] Copying contributing file"
           cp step-by-step.md temp/CONTRIBUTING.md
           cd temp
+          echo "[LOG] Git set-url remote repository"
+          git remote set-url origin https://x-access-token:${{ secrets.TOKEN_GITHUB }}@github.com/Nixtla/statsforecast
           echo "[LOG] Create new branch"
           git checkout -b feat/update-contributing-file
           echo "[LOG] Git add ."
