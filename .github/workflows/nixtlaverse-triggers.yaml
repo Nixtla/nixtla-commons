@@ -35,7 +35,7 @@ jobs:
           echo "[LOG] Git set-url remote repository"
           git remote set-url origin https://x-access-token:${{ secrets.TOKEN_GITHUB }}@github.com/Nixtla/${{ matrix.library }}
           echo "[LOG] Remove previous branch"
-          git push origin --delete feat/update-contributing-file
+          git push origin --delete feat/update-contributing-file || true
           echo "[LOG] Create new branch"
           git checkout -b feat/update-contributing-file
           echo "[LOG] Git add ."
