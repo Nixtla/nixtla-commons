@@ -36,7 +36,7 @@ jobs:
           echo "[LOG] Git add ."
           git add .
           echo "[LOG] Git Commit"
-          git commit -m "Synchronize CONTRIBUTING.md nixtla-commons - Triggered by Github Workflows
+          git commit -m "Synchronize CONTRIBUTING.md nixtla-commons - Triggered by Github Workflows"
           echo "[LOG] Git push"
           git push
           echo "[LOG] Create PR"
