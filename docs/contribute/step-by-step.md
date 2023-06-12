@@ -221,3 +221,7 @@ Include an appropriate title for your pull request and fill in the necessary inf
 Finally, you will see something like this:
 
 ![image](https://github.com/Nixtla/how-to-contribute-nixtlaverse/assets/10517170/846c0b97-46d2-492b-a58e-3e9f669c1632)
+
+
+## Notes
+- This file was generated in [this file](https://github.com/Nixtla/nixtla-commons/blob/main/docs/contribute/step-by-step.md). Please change that file if you want to enhance the document.
