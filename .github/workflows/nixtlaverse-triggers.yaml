@@ -19,6 +19,9 @@ jobs:
     - name: "Update CONTRIBUTING.md"
       if: steps.filter.outputs.contributing == 'true'
       run : |
+          echo "[LOG] Setup global config"
+          git config --global user.email "${{ secrets.USER_EMAIL }}"
+          git config --global user.name "${{ secrets.USER_NAME }}"
           echo "[LOG] It contains changes to the contributing guide, will update to other repo"
           cd ./docs/contribute
           echo "[LOG] Cloning StatsForecast repo"
@@ -26,9 +29,6 @@ jobs:
           echo "[LOG] Copying contributing file"
           cp step-by-step.md temp/CONTRIBUTING.md
           cd temp
-          echo "[LOG] Setup global config"
-          git config --global user.email "${{ secrets.USER_EMAIL }}"
-          git config --global user.name "${{ secrets.USER_NAME }}"
           echo "[LOG] Create new branch"
           git checkout -b feat/update-contributing-file
           echo "[LOG] Git add ."
