@@ -224,4 +224,4 @@ Finally, you will see something like this:
 
 
 ## Notes
-- This file was generated in [this file](https://github.com/Nixtla/nixtla-commons/blob/main/docs/contribute/step-by-step.md). Please change that file if you want to enhance the document.
+- This file was generated using [this file](https://github.com/Nixtla/nixtla-commons/blob/main/docs/contribute/step-by-step.md). Please change that file if you want to enhance the document.
