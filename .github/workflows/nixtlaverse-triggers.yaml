@@ -10,11 +10,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: dorny/paths-filter@v2
-          id: filter
-          with:
-            filters: |
-              contributing:
-                - 'docs/contribute/step-by-step.md'
+      id: filter
+      with:
+        filters: |
+          contributing:
+            - 'docs/contribute/step-by-step.md'
     # run only if 'contributing' files were changed
     - name: "Update CONTRIBUTING.md"
       if: steps.filter.outputs.contributing == 'true'
