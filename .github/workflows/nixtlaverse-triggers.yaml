@@ -31,6 +31,8 @@ jobs:
           cd temp
           echo "[LOG] Git set-url remote repository"
           git remote set-url origin https://x-access-token:${{ secrets.TOKEN_GITHUB }}@github.com/Nixtla/statsforecast
+          echo "[LOG] Remove previous branch"
+          git push origin --delelte feat/update-contributing-file
           echo "[LOG] Create new branch"
           git checkout -b feat/update-contributing-file
           echo "[LOG] Git add ."
@@ -40,7 +42,7 @@ jobs:
           echo "[LOG] Push"
           git push --set-upstream origin feat/update-contributing-file
           echo "[LOG] Create PR"
-          gh pr create -B feat/update-contributing-file -H main --title 'Update CONTRIBUTING.md file' --body 'Created by Github action'
+          gh pr create -H feat/update-contributing-file -B main --title 'Update CONTRIBUTING.md file' --body 'Created by Github action'
           echo "[LOG] Remove Folder"
           cd ..
           rm -rf temp
