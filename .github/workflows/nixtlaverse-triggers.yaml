@@ -7,6 +7,9 @@ on:
 jobs:
   sync-contributing:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        library: [statsforecast, mlforecast, neuralforecast, hierarchicalforecast]
     steps:
     - uses: actions/checkout@v2
     - uses: dorny/paths-filter@v2
@@ -24,13 +27,13 @@ jobs:
           git config --global user.name "${{ secrets.USER_NAME }}"
           echo "[LOG] It contains changes to the contributing guide, will update to other repo"
           cd ./docs/contribute
-          echo "[LOG] Cloning StatsForecast repo"
-          git clone https://github.com/nixtla/statsforecast.git temp
+          echo "[LOG] Cloning Library repo"
+          git clone https://github.com/nixtla/${{ matrix.library }}.git temp
           echo "[LOG] Copying contributing file"
           cp step-by-step.md temp/CONTRIBUTING.md
           cd temp
           echo "[LOG] Git set-url remote repository"
-          git remote set-url origin https://x-access-token:${{ secrets.TOKEN_GITHUB }}@github.com/Nixtla/statsforecast
+          git remote set-url origin https://x-access-token:${{ secrets.TOKEN_GITHUB }}@github.com/Nixtla/${{ matrix.library }}
           echo "[LOG] Remove previous branch"
           git push origin --delete feat/update-contributing-file
           echo "[LOG] Create new branch"
@@ -42,7 +45,7 @@ jobs:
           echo "[LOG] Push"
           git push --set-upstream origin feat/update-contributing-file
           echo "[LOG] Create PR"
-          gh pr create -H feat/update-contributing-file -B main --title 'Update CONTRIBUTING.md file' --body 'Created by Github action'
+          gh pr create -H feat/update-contributing-file -B main --title 'Update CONTRIBUTING.md file' --body 'Created by Github action' --label documentation --reviewer nixtla/founders
           echo "[LOG] Remove Folder"
           cd ..
           rm -rf temp
