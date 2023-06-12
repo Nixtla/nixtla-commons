@@ -37,8 +37,8 @@ jobs:
           git add .
           echo "[LOG] Git Commit"
           git commit -m "Synchronize CONTRIBUTING.md nixtla-commons - Triggered by Github Workflows"
-          echo "[LOG] Git push"
-          git push
+          echo "[LOG] Push"
+          git push --set-upstream origin feat/update-contributing-file
           echo "[LOG] Create PR"
           gh pr create -B feat/update-contributing-file -H main --title 'Update CONTRIBUTING.md file' --body 'Created by Github action'
           echo "[LOG] Remove Folder"
