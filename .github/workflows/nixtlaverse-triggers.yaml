@@ -45,7 +45,7 @@ jobs:
           echo "[LOG] Push"
           git push --set-upstream origin feat/update-contributing-file
           echo "[LOG] Create PR"
-          gh pr create -H feat/update-contributing-file -B main --title 'Update CONTRIBUTING.md file' --body 'Created by Github action' --label documentation --reviewer nixtla/founders
+          gh pr create -H feat/update-contributing-file -B main --title 'Update CONTRIBUTING.md file' --body 'Created by Github action' --label documentation --reviewer mergenthaler,FedericoGarza
           echo "[LOG] Remove Folder"
           cd ..
           rm -rf temp
