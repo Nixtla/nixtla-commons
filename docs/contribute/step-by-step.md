@@ -95,7 +95,8 @@ Open a jupyter notebook using `jupyter lab` (or VS Code).
 
 1. **Make Your Changes:** Make changes to the codebase, ensuring your changes are self-contained and cohesive.
 
-2. **Commit Your Changes:** Add the changed files using `git add [your_modified_file_0.ipynb] [your_modified_file_1.ipynb]`, then commit these changes using `git commit -m "Your descriptive commit message"`.
+2. **Commit Your Changes:** Add the changed files using `git add [your_modified_file_0.ipynb] [your_modified_file_1.ipynb]`, then commit these changes using `git commit -m "<type>: <Your descriptive commit message>"`. Please use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
 
 3. **Push Your Changes:** 
 Push your changes to the remote repository on GitHub with `git push origin feature/your-feature-name`.
