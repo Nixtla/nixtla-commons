@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        library: [statsforecast, mlforecast, neuralforecast, hierarchicalforecast]
+        library: [statsforecast]
     steps:
     - name: Sync Repos Action
       uses: FedericoGarza/sync-repos@v1.0.6
@@ -22,4 +22,23 @@ jobs:
         user-email: ${{ secrets.USER_EMAIL }}
         user-name: ${{ secrets.USER_NAME }}
         github-token: ${{ secrets.TOKEN_GITHUB }}
-        commit-message: "Synchronize CONTRIBUTING.md from nixtla-commons - Triggered by Github Workflows"
+        commit-message: "[docs]: synchronize contribute from nixtla-commons - Triggered by Github Workflows"
+
+  sync-styles:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        library: [statsforecast]
+    steps:
+    - name: Sync Repos Action
+      uses: FedericoGarza/sync-repos@v1.0.6
+      with: 
+        output-repo: Nixtla/${{ matrix.library }}
+        output-file: nbs/
+        input-file: styles/*
+        branch-name: feat/update-styles
+        base-branch: feat/new-docs-structure
+        user-email: ${{ secrets.USER_EMAIL }}
+        user-name: ${{ secrets.USER_NAME }}
+        github-token: ${{ secrets.TOKEN_GITHUB }}
+        commit-message: "[docs]: synchronize styles from nixtla-commons - Triggered by Github Workflows"
