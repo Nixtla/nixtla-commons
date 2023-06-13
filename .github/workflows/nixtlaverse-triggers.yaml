@@ -19,8 +19,10 @@ jobs:
         target-path: nbs/docs/contribute/
         source-path: docs/contribute/*
         branch-name: feat/update-contributing-file
-        github-token: ${{ secrets.TOKEN_GITHUB }}
         commit-message: "[docs]: synchronize contribute from nixtla-commons - Triggered by Github Workflows"
+        github-token: ${{ secrets.TOKEN_GITHUB }}
+        user-email: ${{ secrets.USER_EMAIL }}
+        user-name: ${{ secrets.USER_NAME }}
 
   sync-styles:
     runs-on: ubuntu-latest
@@ -38,5 +40,7 @@ jobs:
         target-path: nbs/
         source-path: styles/*
         branch-name: feat/update-styles
-        github-token: ${{ secrets.TOKEN_GITHUB }}
         commit-message: "[docs]: synchronize styles from nixtla-commons - Triggered by Github Workflows"
+        github-token: ${{ secrets.TOKEN_GITHUB }}
+        user-email: ${{ secrets.USER_EMAIL }}
+        user-name: ${{ secrets.USER_NAME }}
