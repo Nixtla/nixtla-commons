@@ -14,7 +14,7 @@ jobs:
     - name: Sync Repos Action
       uses: FedericoGarza/sync-repos@v1.0.2
       with: 
-        output-repo: ${{ matrix.library }}
+        output-repo: Nixtla/${{ matrix.library }}
         output-file: CONTRIBUTING.md
         input-file: docs/contribute/step-by-step.md
         branch-name: feat/update-contributing-file
