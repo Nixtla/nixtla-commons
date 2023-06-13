@@ -16,7 +16,7 @@ jobs:
       uses: FedericoGarza/sync-repos@main
       with: 
         target-repo: Nixtla/${{ matrix.library }}
-        taget-path: nbs/docs/contribute/
+        target-path: nbs/docs/contribute/
         source-path: docs/contribute/*
         branch-name: feat/update-contributing-file
         github-token: ${{ secrets.TOKEN_GITHUB }}
