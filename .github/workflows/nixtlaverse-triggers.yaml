@@ -13,14 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Sync Repos Action
-      uses: FedericoGarza/sync-repos@v1.0.7
+      uses: FedericoGarza/sync-repos@main
       with: 
-        output-repo: Nixtla/${{ matrix.library }}
-        output-file: nbs/docs/contribute/
-        input-file: docs/contribute/*
+        target-repo: Nixtla/${{ matrix.library }}
+        taget-path: nbs/docs/contribute/
+        source-path: docs/contribute/*
         branch-name: feat/update-contributing-file
-        user-email: ${{ secrets.USER_EMAIL }}
-        user-name: ${{ secrets.USER_NAME }}
         github-token: ${{ secrets.TOKEN_GITHUB }}
         commit-message: "[docs]: synchronize contribute from nixtla-commons - Triggered by Github Workflows"
 
@@ -34,13 +32,11 @@ jobs:
     - name: Generate extra files
       run: source ./action_files/build-quarto-yml.sh statsforecast docs/getting-started/Getting_Started_short.ipynb
     - name: Sync Repos Action
-      uses: FedericoGarza/sync-repos@v1.0.7
+      uses: FedericoGarza/sync-repos@main
       with: 
-        output-repo: Nixtla/${{ matrix.library }}
-        output-file: nbs/
-        input-file: styles/*
+        target-repo: Nixtla/${{ matrix.library }}
+        target-path: nbs/
+        source-path: styles/*
         branch-name: feat/update-styles
-        user-email: ${{ secrets.USER_EMAIL }}
-        user-name: ${{ secrets.USER_NAME }}
         github-token: ${{ secrets.TOKEN_GITHUB }}
         commit-message: "[docs]: synchronize styles from nixtla-commons - Triggered by Github Workflows"
