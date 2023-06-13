@@ -12,7 +12,7 @@ jobs:
         library: [statsforecast, mlforecast, neuralforecast, hierarchicalforecast]
     steps:
     - name: Sync Repos Action
-      uses: FedericoGarza/sync-repos@v1.0.5
+      uses: FedericoGarza/sync-repos@v1.0.6
       with: 
         output-repo: Nixtla/${{ matrix.library }}
         output-file: nbs/docs/contribute/
