@@ -12,12 +12,13 @@ jobs:
         library: [statsforecast, mlforecast, neuralforecast, hierarchicalforecast]
     steps:
     - name: Sync Repos Action
-      uses: FedericoGarza/sync-repos@v1.0.3
+      uses: FedericoGarza/sync-repos@v1.0.5
       with: 
         output-repo: Nixtla/${{ matrix.library }}
-        output-file: CONTRIBUTING.md
-        input-file: docs/contribute/step-by-step.md
+        output-file: nbs/docs/contribute/
+        input-file: docs/contribute/*
         branch-name: feat/update-contributing-file
+        base-branch: feat/new-docs-structure
         user-email: ${{ secrets.USER_EMAIL }}
         user-name: ${{ secrets.USER_NAME }}
         github-token: ${{ secrets.TOKEN_GITHUB }}
