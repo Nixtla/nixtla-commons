@@ -11,8 +11,9 @@ jobs:
       matrix:
         library: [statsforecast]
     steps:
+    - uses: actions/checkout@v2
     - name: Sync Repos Action
-      uses: FedericoGarza/sync-repos@v1.0.6
+      uses: FedericoGarza/sync-repos@v1.0.7
       with: 
         output-repo: Nixtla/${{ matrix.library }}
         output-file: nbs/docs/contribute/
@@ -30,8 +31,11 @@ jobs:
       matrix:
         library: [statsforecast]
     steps:
+    - uses: actions/checkout@v2
+    - name: Generate extra files
+      run: source ./action_files/build-quarto-yml.sh statsforecast docs/getting-started/Getting_Started_short.ipynb
     - name: Sync Repos Action
-      uses: FedericoGarza/sync-repos@v1.0.6
+      uses: FedericoGarza/sync-repos@v1.0.7
       with: 
         output-repo: Nixtla/${{ matrix.library }}
         output-file: nbs/
