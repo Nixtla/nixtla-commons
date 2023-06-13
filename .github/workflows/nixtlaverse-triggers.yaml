@@ -12,7 +12,7 @@ jobs:
         library: [statsforecast, mlforecast, neuralforecast, hierarchicalforecast]
     steps:
     - name: Sync Repos Action
-      uses: FedericoGarza/sync-repos@v1.0.2
+      uses: FedericoGarza/sync-repos@v1.0.3
       with: 
         output-repo: Nixtla/${{ matrix.library }}
         output-file: CONTRIBUTING.md
@@ -21,4 +21,4 @@ jobs:
         user-email: ${{ secrets.USER_EMAIL }}
         user-name: ${{ secrets.USER_NAME }}
         github-token: ${{ secrets.TOKEN_GITHUB }}
-        commit-message: "Synchronize CONTRIBUTING.md nixtla-commons - Triggered by Github Workflows"
+        commit-message: "Synchronize CONTRIBUTING.md from nixtla-commons - Triggered by Github Workflows"
