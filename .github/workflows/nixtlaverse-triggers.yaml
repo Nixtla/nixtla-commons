@@ -19,7 +19,6 @@ jobs:
         output-file: nbs/docs/contribute/
         input-file: docs/contribute/*
         branch-name: feat/update-contributing-file
-        base-branch: feat/new-docs-structure
         user-email: ${{ secrets.USER_EMAIL }}
         user-name: ${{ secrets.USER_NAME }}
         github-token: ${{ secrets.TOKEN_GITHUB }}
@@ -41,7 +40,6 @@ jobs:
         output-file: nbs/
         input-file: styles/*
         branch-name: feat/update-styles
-        base-branch: feat/new-docs-structure
         user-email: ${{ secrets.USER_EMAIL }}
         user-name: ${{ secrets.USER_NAME }}
         github-token: ${{ secrets.TOKEN_GITHUB }}
