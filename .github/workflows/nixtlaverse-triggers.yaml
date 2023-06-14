@@ -64,7 +64,7 @@ jobs:
         user-email: ${{ secrets.USER_EMAIL }}
         user-name: ${{ secrets.USER_NAME }}
 
-  sync-issue-template:
+  sync-release-drafter:
     runs-on: ubuntu-latest
     strategy:
       matrix:
