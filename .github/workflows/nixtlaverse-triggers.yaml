@@ -63,3 +63,22 @@ jobs:
         github-token: ${{ secrets.TOKEN_GITHUB }}
         user-email: ${{ secrets.USER_EMAIL }}
         user-name: ${{ secrets.USER_NAME }}
+
+  sync-issue-template:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        library: [statsforecast]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Sync Repos Action
+      uses: FedericoGarza/sync-repos@main
+      with: 
+        target-repo: Nixtla/${{ matrix.library }}
+        target-path: .github/release-drafter.yml
+        source-path: github_files/release-drafter.yml
+        branch-name: feat/update-release-drafter
+        commit-message: "[docs]: synchronize release drafter from nixtla-commons - Triggered by Github Workflows"
+        github-token: ${{ secrets.TOKEN_GITHUB }}
+        user-email: ${{ secrets.USER_EMAIL }}
+        user-name: ${{ secrets.USER_NAME }}
